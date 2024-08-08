@@ -7,18 +7,11 @@ const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
     variant: {
-      options: [
-        'default',
-        'secondary',
-        'outline',
-        'ghost',
-        'destructive',
-        'destructive-outline',
-        'destructive-ghost',
-        'accept',
-        'accept-outline',
-        'normal',
-      ],
+      options: ['default', 'outline', 'ghost'],
+      control: { type: 'select' },
+    },
+    theme: {
+      options: ['default', 'secondary', 'destructive', 'accept', 'normal'],
       control: { type: 'select' },
     },
     size: {
@@ -34,85 +27,9 @@ export const Default: Story = {
   args: {
     variant: 'default',
     size: 'default',
+    theme: 'default',
     icon: false,
     children: 'Button',
     disabled: false,
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    children: 'Button',
-    disabled: true,
-  },
-}
-
-export const Icon: Story = {
-  args: {
-    children: 'Button',
-    icon: true,
-  },
-}
-
-export const Secondary: Story = {
-  args: {
-    children: 'Button',
-    variant: 'secondary',
-  },
-}
-
-export const Outline: Story = {
-  args: {
-    children: 'Button',
-    variant: 'outline',
-  },
-}
-
-export const Ghost: Story = {
-  args: {
-    children: 'Button',
-    variant: 'ghost',
-  },
-}
-
-export const Destructive: Story = {
-  args: {
-    children: 'Button',
-    variant: 'destructive',
-  },
-}
-
-export const DestructiveOutline: Story = {
-  args: {
-    children: 'Button',
-    variant: 'destructive-outline',
-  },
-}
-
-export const DestructiveGhost: Story = {
-  args: {
-    children: 'Button',
-    variant: 'destructive-ghost',
-  },
-}
-
-export const Accept: Story = {
-  args: {
-    children: 'Button',
-    variant: 'accept',
-  },
-}
-
-export const AcceptOutline: Story = {
-  args: {
-    children: 'Button',
-    variant: 'accept-outline',
-  },
-}
-
-export const Normal: Story = {
-  args: {
-    children: 'Button',
-    variant: 'normal',
   },
 }

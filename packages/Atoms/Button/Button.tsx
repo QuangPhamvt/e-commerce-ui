@@ -75,6 +75,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       variant = 'default',
       size = 'default',
+      theme = 'default',
       icon = false,
       asChild = false,
       children,
@@ -84,7 +85,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const Comp = asChild ? Slot : 'button'
     return (
-      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
+      <Comp
+        className={cn(buttonVariants({ variant, size, theme, className }))}
+        ref={ref}
+        {...props}
+      >
         <GradientIcon icon={icon} variant={variant!} />
         {children}
       </Comp>
